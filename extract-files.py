@@ -58,6 +58,8 @@ def blob_fixup_graphic_buffer_size(
 
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/sensors/hals.conf': blob_fixup()
+        .add_line_if_missing('sensors.moto_ext.so'),
     'vendor/lib/hw/audio.primary.lito-moto.so': blob_fixup()
         .replace_needed('android.hardware.power-V1-ndk_platform.so', 'android.hardware.power-V1-ndk.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),

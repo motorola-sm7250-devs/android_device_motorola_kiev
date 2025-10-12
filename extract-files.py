@@ -28,6 +28,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),
     ('vendor/lib/hw/sound_trigger.primary.lito.so', 'vendor/lib/soundfx/libmmieffectswrapper.so', 'vendor/lib/soundfx/libspeakerbundle.so'): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),
+    'vendor/lib64/camera/components/com.vidhance.node.processing.so': blob_fixup()
+        .replace_needed('libui.so', 'libui-v34.so'),
     ('vendor/lib64/com.qti.feature2.gs.so', 'vendor/lib64/com.qti.feature2.gs.bitra.so', 'vendor/lib64/hw/com.qti.chi.override.so', 'vendor/lib64/hw/com.qti.chi.override.bitra.so'): blob_fixup()
         .binary_regex_replace(b'camera.mot.is.coming.cts', b'vendor.camera.coming.cts'),
     'vendor/lib64/libvidhance.so': blob_fixup()

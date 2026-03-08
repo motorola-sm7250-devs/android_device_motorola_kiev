@@ -84,6 +84,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Sensors
+$(call soong_config_set_bool,moto_sensors,udfps,false)
 PRODUCT_PACKAGES += \
     sensors.moto_ext
 
